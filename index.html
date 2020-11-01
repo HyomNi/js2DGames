@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Gamedev Canvas Workshop</title>
+        <link rel="stylesheet" type="text/css" href="index.css" />
+    </head>
+    <body>
+        <canvas id="myCanvas" width="480" height="320"></canvas>
+        <script>
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+
+            ctx.beginPath();
+            ctx.rect(20, 40, 50, 50);   //직사각형 정의 (canVas 영역에서 좌측 대각선 기준으로 좌표x, y, 너비, 높이)
+            ctx.fillStyle = "#FF0000";  //색상 선언
+            ctx.fill();                 //색상 붓기
+            ctx.closePath();
+
+            ctx.beginPath();
+            ctx.arc(240, 160, 10, 0, Math.PI*2, false); //x좌표, y좌표, 원의 반지름, 시작각도, 끝각도, false: 시계방향, true: 반시계방향 
+            ctx.fillStyle = "green";    //색상 선언
+            ctx.fill();                 //색상 붓기
+            ctx.closePath();
+
+            ctx.beginPath();
+            ctx.rect(160, 10, 100, 40);
+            ctx.strokeStyle = "rgba(0, 0, 255, 0.5)";   //색상 선언
+            ctx.stroke();   //외각선에 색상 부여
+            ctx.closePath();
+        </script>
+    </body>
+</html>
